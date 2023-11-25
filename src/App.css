@@ -32,7 +32,68 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  /* Устанавливаем минимальную высоту body на 100% видимой области окна браузера */
+  display: flex;
+  flex-direction: column;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-top: auto;
+  /* Отступ сверху, чтобы футер был прижат к низу */
+}
+
+.secondPage-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Добавьте этот CSS в ваш файл стилей (например, App.css) */
+.chat {
+  max-width: 400px;
+  /* Максимальная ширина чата */
+}
+
+.messages-container {
+  max-height: 300px;
+  /* Максимальная высота контейнера сообщений */
+  overflow-y: auto;
+  /* Включить вертикальное прокручивание при необходимости */
+}
+
+.message {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
 }

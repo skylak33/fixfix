@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch } from '@salutejs/plasma-web';
+import FirstPageComponent from './FirstPageComponent';
+import SecondPageComponent from './SecondPageComponent';
+import MyTable from './Table';
+import ChatApp from './Chat';
+import { Button, Container } from '@salutejs/plasma-ui';
 import './App.css';
+import UsrForm from './UserForm';
 
-function App() {
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <FirstPageComponent/>
   );
-}
+};
 
 export default App;
