@@ -10,9 +10,9 @@ import './App.css';
 import UsrForm from './UserForm';
 
 
-const SecondPageComponent = () => {
+const SecondPage = () => {
     function FirstPageComponentLink() {
-        window.location.href = "/first";
+        window.location.href = "/";
         console.warn("1")
     }
   return (
@@ -31,4 +31,4 @@ const SecondPageComponent = () => {
   );
 };
 
-export default SecondPageComponent;
+export default SecondPage;

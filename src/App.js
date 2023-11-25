@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 import { Switch } from '@salutejs/plasma-web';
 import FirstPageComponent from './FirstPageComponent';
 import SecondPageComponent from './SecondPageComponent';
@@ -14,8 +14,12 @@ import UsrForm from './UserForm';
 const App = () => {
 
   return (
-    
-    <FirstPageComponent/>
+    <Router>
+      <Routes>
+        <Route exact path='/' element={<FirstPageComponent />} /> 
+        <Route exact path='/second' element={<SecondPageComponent />} />
+      </Routes>
+    </Router>
   );
 };
 
