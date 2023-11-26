@@ -10,21 +10,49 @@ const ChatApp = () => {
         setInputText(event.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         // Добавляем сообщение пользователя в состояние
         setMessages([...messages, { text: inputText, sender: 'user' }]);
         setInputText('');
 
-        // Моделируем ответ от "бота"
-        setTimeout(() => {
-            setMessages([
-                ...messages,
-                { text: `${inputText}`, sender: 'user' },
-                { text: `Ответ от бота на: "${inputText}"`, sender: 'bot' }, // вместо input text - ответ бота
-            ]);
-        }, 1000);
+        try {
+            // Отправляем сообщение на сервер
+            const response = await fetch('http://localhost:8080/api/messages/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user: 'user',
+                    content: inputText
+                }),
+
+            });
+            console.log(JSON.stringify({
+                user: 'user',
+                content: inputText
+            }))
+            if (!response.ok) {
+                throw new Error('Ошибка при отправке сообщения на сервер');
+            }
+
+            // Получаем ответ от сервера
+            const responseData = await response.json();
+
+            // Моделируем ответ от "бота"
+            setTimeout(() => {
+                setMessages([
+                    ...messages,
+                    { text: `${inputText}`, sender: 'user' },
+                    { text: `Ответ от бота: "${responseData.text}"`, sender: 'bot' },
+                ]);
+            }, 1000);
+
+        } catch (error) {
+            console.error('Ошибка:', error.message);
+        }
     };
 
     return (
