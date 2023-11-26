@@ -1,7 +1,6 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
-import { Switch } from '@salutejs/plasma-web';
 import FirstPageComponent from './FirstPageComponent';
 import SecondPageComponent from './SecondPageComponent';
 import MyTable from './Table';
@@ -17,7 +16,8 @@ const App = () => {
     <Router>
       <Routes>
         <Route exact path='/' element={<FirstPageComponent />} /> 
-        <Route exact path='/second' element={<SecondPageComponent />} />
+        <Route exact path='/formpage' element={<SecondPageComponent />} />
+        <Route exact path='/formpage:id' element={<SecondPageComponent />} />
       </Routes>
     </Router>
   );

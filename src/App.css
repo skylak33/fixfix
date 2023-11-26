@@ -51,7 +51,8 @@ body {
 }
 
 .table-container {
-  max-height: 400px;
+  height: 1000px;
+  width: 1000px;
   overflow-y: auto;
 }
 
@@ -64,7 +65,7 @@ th,
 td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 .footer {
@@ -82,7 +83,7 @@ td {
 
 /* Добавьте этот CSS в ваш файл стилей (например, App.css) */
 .chat {
-  max-width: 400px;
+  max-width: 455px;
   /* Максимальная ширина чата */
 }
 

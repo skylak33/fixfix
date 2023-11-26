@@ -30,11 +30,11 @@ const MyTable = () => {
 
   const callId = (item) => {
     console.warn(item);
-    setTimeout(SecondPageComponentLink, 1000)
+    setTimeout(SecondPageComponentLink, 0)
     // Здесь вы можете использовать item.id или другие свойства объекта item
   };
   const SecondPageComponentLink = () => {
-    window.location.href = "second";
+    window.location.href = "formpage";
         console.warn("1")
   }
   //const navigateToSecondPage = () => {
@@ -52,6 +52,7 @@ const MyTable = () => {
           <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -59,12 +60,15 @@ const MyTable = () => {
            
             <tr key={item.id}>
               <td>{item.id}</td>
-              
-              <Button view='' onClick={() => callId(item)} >{item.name}</Button>
-    
-              <Checkbox readOnly='true' />
+              <td className="button-cell">
+              <Button view='clear' size='s' onClick={() => callId(item)}>
+                {item.name}
+              </Button>
+            </td>
+            <td className="checkbox-cell">
+              <Checkbox disabled='true' readOnly='true' />
+            </td>
             </tr>
-            
           ))}
         </tbody>
       </table>

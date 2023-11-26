@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '@salutejs/plasma-web';
 
 const ChatApp = () => {
     const [messages, setMessages] = useState([]);
@@ -27,7 +28,7 @@ const ChatApp = () => {
 
     return (
         <div className='chat'>
-            <div style={{ height: '300px', border: '1px solid #ccc', overflow: 'auto' }}>
+            <div style={{ height: '400px', border: '1px solid #ccc', overflow: 'auto' }}>
                 {messages.map((message, index) => (
                     <div
                         key={index}
@@ -49,7 +50,7 @@ const ChatApp = () => {
                     onChange={handleInputChange}
                     placeholder="Введите ваш вопрос"
                 />
-                <button type="submit">Отправить</button>
+                <Button size='xs' type='submit' view="">Отправить</Button>
             </form>
         </div>
     );
