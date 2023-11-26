@@ -11,10 +11,14 @@ import UsrForm from './UserForm';
 
 
 const SecondPage = () => {
-    function FirstPageComponentLink() {
+    function FirstPageComponentLinkAccept() {
         window.location.href = "/";
         console.warn("1")
     }
+    function FirstPageComponentLinkReject() {
+      window.location.href = "/";
+      console.warn("2")
+  }
   return (
     
     <div>
@@ -23,8 +27,8 @@ const SecondPage = () => {
         <ChatApp />
         </div>
         <div className="secondPage-container">
-        <Button view='succes' onClick={FirstPageComponentLink}>Принять </Button>
-        <Button view='error' onClick={FirstPageComponentLink}>Отклонить </Button>
+        <Button view='succes' onClick={FirstPageComponentLinkAccept}>Принять </Button>
+        <Button view='error' onClick={FirstPageComponentLinkReject}>Отклонить </Button>
         </div>
     </div>
     

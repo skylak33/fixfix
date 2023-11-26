@@ -51,7 +51,7 @@ body {
 }
 
 .table-container {
-  height: 1000px;
+  height: 800px;
   width: 1000px;
   overflow-y: auto;
 }
@@ -63,7 +63,7 @@ table {
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 2px solid #dddddda9;
   padding: 8px;
   text-align: center;
 }
@@ -97,4 +97,10 @@ td {
 .message {
   padding: 8px;
   border-bottom: 1px solid #eee;
+}
+
+.user-container {
+  height: 500px;
+  width: 1000px;
+  overflow-y: auto;
 }

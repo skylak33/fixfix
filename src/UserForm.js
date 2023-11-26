@@ -22,7 +22,7 @@ const Table = () => {
   ];
 
   return (
-    <div className="table-container">
+    <div className="user-container">
       <table>
         <tbody>
           {data.map((item, index) => (
